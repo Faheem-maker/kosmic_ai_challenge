@@ -1,8 +1,16 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import { Box, Typography } from "@mui/material";
 
 export default function Home() {
   return (
-    <h1>Kosmic AI - Frontend Challenge</h1>
+    <>
+      <Box>
+        <Typography variant="h2">
+          Content Type
+        </Typography>
+        <Typography>
+          Choose a content type that best fits your needs.
+        </Typography>
+      </Box>
+    </>
   );
 }
