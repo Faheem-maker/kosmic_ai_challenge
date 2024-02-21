@@ -27,11 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-        <AppBar />
-        <body className={inter.className}>
-          <Container>
+        <body className={inter.className} style={{height: '100vh'}}>
+          <AppBar />
           {children}
-          </Container>
         </body>
     </html>
   );
