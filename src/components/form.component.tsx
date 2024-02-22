@@ -1,6 +1,6 @@
 'use client';
 
-import { Paper, Typography, ListItem, Chip, FormControl, InputLabel, Select, MenuItem, Menu, Slider, Grid, Box } from "@mui/material";
+import { Typography, Chip, FormControl, InputLabel, Select, MenuItem, Grid, Box, Container, Divider } from "@mui/material";
 import { useState } from "react";
 import GradientSlider from "./slider.component";
 
@@ -52,8 +52,25 @@ export default function ApplicationForm() {
 
     let [title, setTitle] = useState('');
 
-    return (
-        <Box>
+    return (<Box sx={{
+        background: '#12111A',
+        color: '#FFF',
+        height: '100%',
+    }}
+    >
+        <Container sx={{
+            paddingTop: '5rem'
+        }}>
+            <Typography variant="h5" fontWeight={700}>
+                Content Type
+            </Typography>
+            <Typography sx={{ marginTop: '8px', marginBottom: '2rem' }}>
+                Choose a content type that best fits your needs.
+            </Typography>
+            <Divider sx={{
+                background: '#201F27',
+                marginBottom: '2rem',
+            }} />
             <Typography sx={{
                 marginBottom: '8px',
             }}>
@@ -79,8 +96,8 @@ export default function ApplicationForm() {
             </Box>
 
             <FormControl fullWidth sx={{
-                        margin: '18px 0',
-                    }}
+                margin: '18px 0',
+            }}
             >
                 <InputLabel id="content-title-select">Select</InputLabel>
                 <Select
@@ -104,7 +121,6 @@ export default function ApplicationForm() {
                 >
                     <MenuItem value="">Select</MenuItem>
                     {types[selected].map((el) => {
-                        console.log(el);
                         return (
                             <MenuItem key={el} value={el}>{el}</MenuItem>
                         )
@@ -130,12 +146,12 @@ export default function ApplicationForm() {
                 <Grid item md={5} xs={9}>
                     <GradientSlider min={100} max={1000} defaultValue={500} aria-label="Default" valueLabelDisplay="auto" />
                 </Grid>
-                <Grid item md={1} sx={{ padding: '4px'}}>
+                <Grid item md={1} sx={{ padding: '4px' }}>
                     <Typography>1000</Typography>
                 </Grid>
             </Grid>
-        </Box>
-    );
+        </Container>
+    </Box>)
 
     function handleClick(e: any) {
         console.log(e.target.innerText);
