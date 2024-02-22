@@ -2,6 +2,7 @@
 
 import { Paper, Typography, ListItem, Chip, FormControl, InputLabel, Select, MenuItem, Menu, Slider, Grid, Box } from "@mui/material";
 import { useState } from "react";
+import GradientSlider from "./slider.component";
 
 type ContentTypes = {
     "Fun": Array<string>,
@@ -78,8 +79,8 @@ export default function ApplicationForm() {
             </Box>
 
             <FormControl fullWidth sx={{
-                marginTop: '12px',
-            }}
+                        margin: '18px 0',
+                    }}
             >
                 <InputLabel id="content-title-select">Select</InputLabel>
                 <Select
@@ -89,13 +90,13 @@ export default function ApplicationForm() {
                     onChange={(e) => setTitle(e.target.value)}
                     color="secondary"
                     sx={{
-                        marginBottom: '14px'
+                        background: 'white',
                     }}
                     inputProps={{
                         MenuProps: {
                             MenuListProps: {
                                 sx: {
-                                    background: '#1E1D25 !important',
+                                    // background: '#1E1D25 !important',
                                 }
                             }
                         }
@@ -112,22 +113,24 @@ export default function ApplicationForm() {
                 </Select>
             </FormControl>
 
-            <Typography>
+            <Typography sx={{
+                marginBottom: '12px'
+            }}>
                 Set the number of words for output text.
             </Typography>
-            <Grid container spacing={2} alignItems="center" sx={{
+            <Grid container alignItems="center" sx={{
                 background: '#09090D',
-                margin: '16px 8px',
+                padding: '18px',
                 borderRadius: '6px',
                 display: 'inline-flex'
             }}>
-                <Grid item xs={1}>
+                <Grid item md={1}>
                     <Typography>100</Typography>
                 </Grid>
-                <Grid item xs={5}>
-                    <Slider min={100} max={1000} defaultValue={500} aria-label="Default" valueLabelDisplay="auto" />
+                <Grid item md={5}>
+                    <GradientSlider min={100} max={1000} defaultValue={500} aria-label="Default" valueLabelDisplay="auto" />
                 </Grid>
-                <Grid item xs={1}>
+                <Grid item md={1} sx={{ padding: '4px'}}>
                     <Typography>1000</Typography>
                 </Grid>
             </Grid>
