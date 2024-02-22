@@ -127,7 +127,7 @@ export default function ApplicationForm() {
                 <Grid item md={1}>
                     <Typography>100</Typography>
                 </Grid>
-                <Grid item md={5}>
+                <Grid item md={5} xs={9}>
                     <GradientSlider min={100} max={1000} defaultValue={500} aria-label="Default" valueLabelDisplay="auto" />
                 </Grid>
                 <Grid item md={1} sx={{ padding: '4px'}}>
